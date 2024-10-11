@@ -9,6 +9,9 @@ body {
  /*Border de los elementos maquetación*/
 header, nav, aside, main, footer, .element {
     border: 1px black solid;
+    h1,h2{
+        text-align: center;
+    }
 }
 
 header {
@@ -25,12 +28,43 @@ aside {
 
 main {
     background-color: #aaffaa;
-    
-    .element{
-        background-color: #aaaaff;
+
+    .main-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
+        .element{
+            background-color: #aaaaff;
+        }
     }
+    
 }
 
 footer {
     background-color: #ffaaff;
+
+    ul {
+        list-style: none;
+    }
+
+    li{
+        margin-left: 1em;
+    }
 }
+
+@media screen and (min-width: 576px ) {
+    main {
+        .main-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    footer {
+        .footer-container {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+} 
