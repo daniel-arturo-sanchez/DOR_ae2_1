@@ -6,3 +6,31 @@
 body {
     font-size: 12pt;
 }
+ /*Border de los elementos maquetación*/
+header, nav, aside, main, footer, .element {
+    border: 1px black solid;
+}
+
+header {
+    background-color: #ffaaaa;
+}
+
+nav {
+    background-color: #ffddaa;
+}
+
+aside {
+    background-color: #ffffaa;
+}
+
+main {
+    background-color: #aaffaa;
+    
+    .element{
+        background-color: #aaaaff;
+    }
+}
+
+footer {
+    background-color: #ffaaff;
+}
