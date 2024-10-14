@@ -5,7 +5,10 @@
 
 body {
     font-size: 12pt;
+    font-family: "Dosis", Helvetica, "Comic Sans MS", sans-serif;
 }
+
+
 
  /*Border de los elementos maquetación*/
 header, nav, aside, main, footer, .element {
@@ -46,8 +49,7 @@ main {
             justify-content: center;
             text-align: center;
         }
-    }
-    
+    } 
 }
 
 footer {
