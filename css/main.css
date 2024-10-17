@@ -8,32 +8,32 @@ body {
     font-family: "Dosis", Helvetica, "Comic Sans MS", sans-serif;
 }
 
-
-
- /*Border de los elementos maquetación*/
- nav, aside, main, footer, .element {
+/*Mobile-First*/
+ nav, aside, main, .element, footer {
     display: flex;
     flex-direction: column;
     align-content: center;
-    h1,h2{
-        text-align: center;
-    }
 }
-
+/*Header-Cabecera*/
 header {
     display: grid;
     grid-template-columns: 1fr 4fr 1fr 2fr;
     align-items: center;
     justify-items: center;
+    padding: 1em 0;
     background: linear-gradient(to bottom right, rgb(205, 205, 255), rgb(255, 203, 211));
+    /*logo*/
     img{
         width: 5em;
         user-select: none;
     }
+    /*Nombre de tienda*/
     h1 {
         cursor: default;
         user-select: none;
+        text-align: center;
     }
+    /*Contacto/login*/
     a {
         text-decoration: none;
         color: #010422;
@@ -60,11 +60,11 @@ header {
     }
     
 }
-
+/*Barra de navegación*/
 nav {
     font-weight: bold;
     background-color: rgba(255, 203, 211, 0.5);
-    padding: 0.3em 0;
+    padding: 0.5em 0;
     ul {
         display: flex;
         flex-direction: row;
@@ -86,13 +86,14 @@ nav {
         color: #010422;
     }
 }
-
+/*Filtro de navegación*/
 aside {
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding: 0.3em;
     font-size: 1.1em;
-
+    /*Botón de filtrar*/
     a {
         text-decoration: none;
         font-weight: 500;
@@ -112,26 +113,44 @@ aside {
         border: black solid 1px;
     }
 }
-
+/*Contenedor principal de artículos*/
 main {
-    background-color: #aaffaa;
     padding: 0.3em;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    
+    gap: 1em;
     .element{
-        background-color: #aaaaff;
-        margin: 0.1em;
-        padding: 0.3em;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #010422;;
         justify-content: center;
         text-align: center;
+        img {
+            width: 100%;
+        }
+        .nombre-articulo {
+            font-size: 1.5em;
+            font-weight: 500;
+        }
+        .precio{
+            font-size: larger;
+
+        }
+        svg {
+            color: gold;
+        }
+    }
+    .element:hover {
+        box-shadow: -0.1em -0.1em 0.1em 0.1em rgb(24, 13, 0), 0.1em 0.1em 0.1em 0.1em rgb(24, 13, 0);
     }
 } 
-
-
+/*Pie de página*/
 footer{
     background-color: rgb(66, 66, 66);
-    font-size: 0.7em;
+    font-size: 0.85em;
     padding: 1em;
     ul {
         list-style: none;
@@ -144,18 +163,15 @@ footer{
         text-align: left;
         color: whitesmoke;
     }
+    a {
+        color: rgb(243, 241, 238);
+        text-decoration: none;
+    }
+    li:hover {
+        font-weight: bold;
+    }
 }
-
-footer a {
-    color: rgb(243, 241, 238);
-    text-decoration: none;
-}
-
-footer li:hover {
-    font-weight: bold;
-}
-
-
+/*/*Dispositivos con pantallas medianas*/
 @media screen and (min-width: 576px ) {
     header > img {
         width: 6em;
@@ -171,11 +187,12 @@ footer li:hover {
         grid-template-columns: 1fr 1fr;    
     }
 } 
-
+/*Dispositivos con pantallas grandes o medianas con orientación panorámica*/
 @media  screen and (min-width: 912px), (orientation: landscape) and (min-width: 576px) {
     header > img {
         width: 7em;
     }
+    /*Contenedor de las barras de navegación, filtro y contenedor principal*/
     .outer-container {
         display: grid;
         grid-template-columns: 1fr 4fr;
@@ -187,6 +204,7 @@ footer li:hover {
             flex-direction: column;
             justify-content: flex-start;
             text-align: left;
+            align-items: flex-start;
             div {
                 padding: 0.5em;
             }
@@ -196,6 +214,7 @@ footer li:hover {
         }
         main {
             grid-template-columns: repeat(4, 1fr);
+            border-left: 1px solid rgb(66, 66, 66);
         }
     }
     footer {
@@ -203,11 +222,12 @@ footer li:hover {
         grid-template-rows: 1fr;
     }
 }
-
+/*Dispositivos con pantallas muy grandes*/
 @media screen  and (min-width: 1024px) {
     header > img {
         width: 8em;
     }
+    /*Contenedor de las barras de navegación, filtro y contenedor principal*/
     .outer-container{
         grid-template-rows: 1fr 1fr;
 
@@ -218,7 +238,7 @@ footer li:hover {
                 display: flex;
                 flex-direction: column;
                 list-style: disc;
-                margin: auto;
+                margin-left: 1.5em;
             }
         }
         aside {
