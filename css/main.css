@@ -102,6 +102,39 @@
     --footer-color:#a6be9a;
 }
 
+.custom-control-label {
+    background-color: var(--background-color);
+    width: 2em;
+    height: 1em;
+    border-radius: 1em;
+    box-shadow: inset 0 0.1em 0.3em var(--shadow-color), inset 0 -0.1em 0.3em var(--light-emphasis-color);
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+}
+
+.custom-control-label::after {
+    content: "";
+    position: absolute;
+    top: 0.1em;
+    left: 0.1em;
+    background: linear-gradient(180deg, #ffcc89, #d8860b);
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 0.8em;
+    box-shadow: 0 0.1em 0.2em var(--shadow-color);
+    transition: 0.2s;
+}
+.custom-control-input {opacity: 0;}
+
+.custom-control-input:checked + .custom-control-label {
+    background: var(--light-emphasis-color);
+}
+
+.custom-control-input:checked + .custom-control-label::after {
+    transform: translateX(125%);
+    background: var(--shadow-color);
+}
 
 * {
     margin: 0;

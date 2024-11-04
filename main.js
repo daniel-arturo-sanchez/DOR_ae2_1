@@ -1,4 +1,5 @@
 let isDarkTheme = document.body.classList.contains("dark-theme");
+const themeSwitch = document.getElementById("theme");
 
 function switchTheme() {
     if (isDarkTheme){
