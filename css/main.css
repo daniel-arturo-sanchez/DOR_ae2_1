@@ -1,93 +1,8 @@
-/* :root {
-    --primary-color: #e9e645 ;
-    --background-color: #241d2b;
-    --strong-emphasis-color: #336bae;
-    --light-emphasis-color: #98b3dd;
-    --shadow-color:#c645cf;
-    --footer-color:#893e8f;
-} */
-/* :root {
-    --primary-color: #e3d400;
-    --background-color: #e07000;
-    --strong-emphasis-color: #e9a738;
-    --light-emphasis-color: #f3d77c;
-    --shadow-color:#f6f6ac;
-} */
-/* 
-:root {
-    --primary-color: #D27E00;
-    --background-color: #E3AA21;
-    --strong-emphasis-color: #A48A4D;
-    --light-emphasis-color: #4D545A;
-    --shadow-color:#264B59;
-} */
-
-/* .color1 {color: #bbb8e9;}
-.color2 {color: #b6368f;}
-.color3 {color: #da647f;}
-.color4 {color: #cf925d;}
-.color5 {color: #dfd5a3;} */
- /*Youth Palette*/
-/* :root {
-    --primary-color: #F4E02D ;
-    --background-color: #F6F6F1;
-    --strong-emphasis-color: #d436d4;
-    --light-emphasis-color: #129ECD;
-    --shadow-color:#443d46;
-    --footer-color:#d436d4;
-}
-
-.dark-theme{
-    --primary-color: #d436d4 ;
-    --background-color: #443d46;
-    --strong-emphasis-color: #F4E02D;
-    --light-emphasis-color: #129ECD;
-    --shadow-color:#F6F6F1;
-    --footer-color:#129ECD;
-} */
-/*Corprorative Palette*/
-/* :root {
-    --primary-color: #1B1F47 ;
-    --background-color: #E0DCD4;
-    --strong-emphasis-color: #AE475E;
-    --light-emphasis-color: #7B87AA;
-    --shadow-color:#282A38;
-    --footer-color:#7B87AA;
-}
-
-.dark-theme{
-    --primary-color: #AE475E ;
-    --background-color: #282A38;
-    --strong-emphasis-color: #1B1F47;
-    --light-emphasis-color: #7B87AA;
-    --shadow-color:#E0DCD4;
-    --footer-color:#AE475E;
-} */
-
-/*Dynamism Palette*/
-/* :root {
-    --primary-color: #F2B117 ;
-    --background-color: #E7F0EC;
-    --strong-emphasis-color: #85878D;
-    --light-emphasis-color: #C04E24;
-    --shadow-color:#2D2B2F;
-    --footer-color:#85878D;
-}
-
-.dark-theme{
-    --primary-color: #F2B117 ;
-    --background-color: #2D2B2F;
-    --strong-emphasis-color: #C04E24;
-    --light-emphasis-color: #85878D;
-    --shadow-color:#E7F0EC;
-    --footer-color:#C04E24;
-} */
-
 /*Quiet Palette*/
 :root {
     --primary-color: #709252 ;
     --background-color: #EEF1E2;
-    --strong-emphasis-color: #a6be9a;
+    --light-theme-strong-emphasis-color: #dfecd8;
     --light-emphasis-color: #74746E;
     --shadow-color:#292B2C;
     --footer-color:#74746E;
@@ -97,7 +12,7 @@
     :root {
         --primary-color: #a6be9a ;
         --background-color: #292B2C;
-        --strong-emphasis-color: #a6be9a;
+        --strong-emphasis-color:var(--light-theme-strong-emphasis-color);
         --light-emphasis-color: #74746E;
         --shadow-color:#EEF1E2;
         --footer-color:#a6be9a;
@@ -134,40 +49,6 @@
     --footer-color:#a6be9a;
 }
 
-.custom-control-label {
-    background-color: var(--background-color);
-    width: 2em;
-    height: 1em;
-    border-radius: 1em;
-    box-shadow: inset 0 0.1em 0.3em var(--shadow-color), inset 0 -0.1em 0.3em var(--light-emphasis-color);
-    cursor: pointer;
-    position: relative;
-    transition: 0.2s;
-}
-
-.custom-control-label::after {
-    content: "";
-    position: absolute;
-    top: 0.1em;
-    left: 0.1em;
-    background: linear-gradient(180deg, #ffcc89, #d8860b);
-    width: 0.8em;
-    height: 0.8em;
-    border-radius: 0.8em;
-    box-shadow: 0 0.1em 0.2em var(--shadow-color);
-    transition: 0.2s;
-}
-.custom-control-input {opacity: 0;}
-
-.custom-control-input:checked + .custom-control-label {
-    background: var(--light-emphasis-color);
-}
-
-.custom-control-input:checked + .custom-control-label::after {
-    transform: translateX(125%);
-    background: var(--shadow-color);
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -188,17 +69,20 @@ body {
 /*Header-Cabecera*/
 header {
     display: grid;
-    grid-template-columns: 1fr 4fr 1fr 2fr;
+    grid-template-columns: 1fr 4fr 1fr 2fr 1fr;
     align-items: center;
     justify-items: center;
     padding: 1em 0;
+    height: auto;
     /* background: linear-gradient(to bottom right, rgb(205, 205, 255), rgb(255, 203, 211)); */
     background-color: var(--primary-color);
     /*logo*/
+    
     img{
         width: 5em;
         user-select: none;
     }
+    
     /*Nombre de tienda*/
     h1 {
         cursor: default;
@@ -231,6 +115,45 @@ header {
     a:active>svg {
         box-shadow: none;
         color: var(--strong-emphasis-color);
+    }
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .custom-control-label {
+        background-color: var(--light-emphasis-color);
+        width: 2em;
+        height: 1em;
+        border-radius: 1em;
+        box-shadow: inset 0 0.1em 0.3em var(--shadow-color), inset 0 -0.1em 0.3em var(--light-emphasis-color);
+        cursor: pointer;
+        position: relative;
+        transition: 0.2s;
+        display: block;
+    }
+    
+    .custom-control-label::after {
+        content: "";
+        position: absolute;
+        top: 0.1em;
+        left: 0.1em;
+        background: linear-gradient(180deg, #ffcc89, #d8860b);
+        width: 0.8em;
+        height: 0.8em;
+        border-radius: 0.8em;
+        box-shadow: 0 0.1em 0.2em var(--shadow-color);
+        transition: 0.2s;
+    }
+    .custom-control-input {opacity: 0;}
+    
+    .custom-control-input:checked + .custom-control-label {
+        background: var(--light-emphasis-color);
+    }
+    
+    .custom-control-input:checked + .custom-control-label::after {
+        transform: translateX(125%);
+        background: var(--shadow-color);
     }
     
 }
@@ -292,8 +215,7 @@ aside {
 /*Contenedor principal de artículos*/
 main {
     padding: 0.3em;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     gap: 1em;
     background-color: var(--background-color);
     border-top: var(--shadow-color) solid 1px;
@@ -359,10 +281,10 @@ footer{
     header > img {
         width: 6em;
     }
-    main {
+    /* main {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-    }
+    } */
 
     footer {
         display: grid;
