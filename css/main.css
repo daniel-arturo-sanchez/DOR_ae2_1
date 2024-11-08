@@ -1,6 +1,6 @@
 /*Quiet Palette*/
 :root {
-    --palm-leaf: #709252 ;
+    --palm-leaf: #6b8b4f ;
     --marigold: #e3992e;
     --alabaster: #EEF1E2;
     --pine-tree:#292B2C;
@@ -15,7 +15,6 @@
         --strong-emphasis-color: var(--marigold);
         --light-emphasis-color: var(--alabaster) ;
         --shadow-color:var(--dark-silver);
-        --footer-color:var(--dark-silver);
     }
 }
 
@@ -26,7 +25,6 @@
         --strong-emphasis-color: var(--marigold);
         --light-emphasis-color: var(--alabaster);
         --shadow-color:var(--pine-tree);
-        --footer-color:var(--dark-silver);
     }
 }
 
@@ -36,7 +34,7 @@
     --strong-emphasis-color: var(--marigold);
     --light-emphasis-color: var(--pine-tree);
     --shadow-color:var(--dark-silver);
-    --footer-color:var(--dark-silver);
+    --footer-background:var(--light-emphasis-color);
 }
 
 
@@ -46,16 +44,16 @@
     --strong-emphasis-color: var(--marigold);
     --light-emphasis-color: var(--alabaster) ;
     --shadow-color:var(--dark-silver);
-    --footer-color:var(--dark-silver);
+    --footer-background:#0c0c0b;
 }
 
 .dark-theme-high-contrast {
     --primary-color: var(--palm-leaf) ;
     --background-color: #0c0c0b;
     --strong-emphasis-color: var(--marigold);
-    --light-emphasis-color: var(--pine-tree);
+    --light-emphasis-color: #f2f3f2;
     --shadow-color:var(--dark-silver);
-    --footer-color:var(--dark-silver);
+    --footer-background:var(--pine-tree);
 }
 
 
@@ -63,9 +61,9 @@
     --primary-color: var(--palm-leaf) ;
     --background-color: #f2f3f2;
     --strong-emphasis-color: var(--marigold);
-    --light-emphasis-color: var(--alabaster) ;
+    --light-emphasis-color: var(--pine-tree) ;
     --shadow-color:var(--dark-silver);
-    --footer-color:var(--dark-silver);
+    --footer-background:var(--light-emphasis-color);
 }
 
 * {
@@ -108,6 +106,8 @@ header {
         user-select: none;
         text-align: center;
         color: var(--strong-emphasis-color);
+        font-size: 3em;
+
     }
     /*Contacto/login*/
     a {
@@ -115,7 +115,7 @@ header {
         /* color: #010422; */
         color: var(--light-emphasis-color);
         font-weight: 700;
-        font-size: 1.5em;
+        font-size: 1.2em;
         text-align: center;
     }
 
@@ -140,6 +140,13 @@ header {
         flex-direction: column;
         align-items: center;
     }
+    p {
+        color: var(--pine-tree)
+    }
+    .custom-control-input:checked + p {
+        color: var(--alabaster);
+    }
+
     .custom-control-label {
         background-color: var(--light-emphasis-color);
         width: 2em;
@@ -157,7 +164,7 @@ header {
         position: absolute;
         top: 0.1em;
         left: 0.1em;
-        background: linear-gradient(180deg, #ffcc89, #d8860b);
+        background: linear-gradient(180deg, #b86d0c, var(--strong-emphasis-color));
         width: 0.8em;
         height: 0.8em;
         border-radius: 0.8em;
@@ -166,11 +173,11 @@ header {
     }
     .custom-control-input {opacity: 0;}
     
-    .custom-control-input:checked + .custom-control-label {
-        background: var(--light-emphasis-color);
-    }
+    /* .custom-control-input:checked + p {
+        color: var(--light-emphasis-color);
+    } */
     
-    .custom-control-input:checked + .custom-control-label::after {
+    .custom-control-input:checked ~ .custom-control-label::after {
         transform: translateX(125%);
         background: var(--shadow-color);
     }
@@ -210,13 +217,13 @@ aside {
     padding: 0.3em;
     font-size: 1.1em;
     background-color: var(--background-color);
-    color: var(--shadow-color);
+    color: var(--light-emphasis-color);
     /*Botón de filtrar*/
     a {
         text-decoration: none;
         font-weight: 500;
-        color:var(--shadow-color);
-        border: var(--shadow-color) solid 1px;
+        color:var(--light-emphasis-color);
+        border: var(--light-emphasis-color) solid 1px;
         padding: 0.5em;
     }
 
@@ -263,13 +270,13 @@ main {
 
         }
         p {
-            color: var(--shadow-color);
+            color: var(--light-emphasis-color);
         }
         svg {
-            color: var(--primary-color);
+            color: var(--strong-emphasis-color);
         }
     }
-    .element:hover {
+    .element:hover img {
         box-shadow: -0.1em -0.1em 0.1em 0.1em var(--strong-emphasis-color), 0.1em 0.1em 0.1em 0.1em var(--strong-emphasis-color);
     }
     .btn-comprar {
@@ -277,8 +284,10 @@ main {
         padding: 1em;
         display: block;
         margin: 3em;
-        color: var(--shadow-color);
+        color: var(--light-emphasis-color);
         text-decoration: none;
+        font-weight: bolder;
+        font-size: 1.2em;
     }
 
     .btn-comprar:hover {
@@ -287,12 +296,13 @@ main {
     }
     .btn-comprar:active {
         background-color: #4e3209;
+        color: var(--background-color)
 
     }
 } 
 /*Pie de página*/
 footer{
-    background-color: var(--footer-color);
+    background-color: var(--footer-background);
     font-size: 0.85em;
     padding: 1em;
     ul {
@@ -307,7 +317,7 @@ footer{
         color: var(--primary-color);
     }
     a {
-        color: var(--shadow-color);
+        color: var(--strong-emphasis-color);
         text-decoration: none;
     }
     li:hover {
