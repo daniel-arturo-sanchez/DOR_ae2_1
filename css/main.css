@@ -59,7 +59,7 @@
 }
 
 
-.dark-theme-high-contrast {
+.light-theme-high-contrast {
     --primary-color: var(--palm-leaf) ;
     --background-color: #f2f3f2;
     --strong-emphasis-color: var(--marigold);
@@ -113,18 +113,18 @@ header {
     a {
         text-decoration: none;
         /* color: #010422; */
-        color: var(--strong-emphasis-color);
+        color: var(--light-emphasis-color);
         font-weight: 700;
         font-size: 1.5em;
         text-align: center;
     }
 
     a:hover {
-        color: var(--shadow-color);
-        text-shadow: -0.1em 0.1em 0 var(--strong-emphasis-color), 0.1em -0.1em 0 var(--strong-emphasis-color) ;
+        color: var(--strong-emphasis-color);
+        text-shadow: -0.1em 0.1em 0 var(--shadow-color), 0.1em -0.1em 0 var(--shadow-color) ;
     }
     a:hover>svg {
-        box-shadow: -0.1em 0.1em 0 var(--strong-emphasis-color), 0.1em -0.1em 0 var(--strong-emphasis-color) ;
+        box-shadow: -0.1em 0.1em 0 var(--shadow-color), 0.1em -0.1em 0 var(--shadow-color) ;
         border-radius: 50%;
     }
     a:active {
