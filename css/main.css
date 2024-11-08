@@ -1,52 +1,71 @@
 /*Quiet Palette*/
 :root {
-    --primary-color: #709252 ;
-    --background-color: #EEF1E2;
-    --light-theme-strong-emphasis-color: #dfecd8;
-    --light-emphasis-color: #74746E;
-    --shadow-color:#292B2C;
-    --footer-color:#74746E;
+    --palm-leaf: #709252 ;
+    --marigold: #e3992e;
+    --alabaster: #EEF1E2;
+    --pine-tree:#292B2C;
+    --chinese-white: #dfecd8;
+    --dark-silver: #737964;
 }
 
 @media (prefers-color-scheme : dark) {
     :root {
-        --primary-color: #a6be9a ;
-        --background-color: #292B2C;
-        --strong-emphasis-color:var(--light-theme-strong-emphasis-color);
-        --light-emphasis-color: #74746E;
-        --shadow-color:#EEF1E2;
-        --footer-color:#a6be9a;
+        --primary-color: var(--palm-leaf) ;
+        --background-color: var(--pine-tree);
+        --strong-emphasis-color: var(--marigold);
+        --light-emphasis-color: var(--alabaster) ;
+        --shadow-color:var(--dark-silver);
+        --footer-color:var(--dark-silver);
     }
 }
 
 @media (prefers-color-scheme : light) {
     :root {
-        --primary-color: #709252 ;
-        --background-color: #EEF1E2;
-        --strong-emphasis-color: #a6be9a;
-        --light-emphasis-color: #74746E;
-        --shadow-color:#292B2C;
-        --footer-color:#74746E;
+        --primary-color: var(--palm-leaf) ;
+        --background-color: var(--alabaster);
+        --strong-emphasis-color: var(--marigold);
+        --light-emphasis-color: var(--alabaster);
+        --shadow-color:var(--pine-tree);
+        --footer-color:var(--dark-silver);
     }
 }
 
 .light-theme {
-    --primary-color: #709252 ;
-    --background-color: #EEF1E2;
-    --strong-emphasis-color: #a6be9a;
-    --light-emphasis-color: #74746E;
-    --shadow-color:#292B2C;
-    --footer-color:#74746E;
+    --primary-color: var(--palm-leaf) ;
+    --background-color: var(--alabaster);
+    --strong-emphasis-color: var(--marigold);
+    --light-emphasis-color: var(--pine-tree);
+    --shadow-color:var(--dark-silver);
+    --footer-color:var(--dark-silver);
 }
 
 
 .dark-theme {
-    --primary-color: #a6be9a ;
-    --background-color: #292B2C;
-    --strong-emphasis-color: #a6be9a;
-    --light-emphasis-color: #74746E;
-    --shadow-color:#EEF1E2;
-    --footer-color:#a6be9a;
+    --primary-color: var(--palm-leaf) ;
+    --background-color: var(--pine-tree);
+    --strong-emphasis-color: var(--marigold);
+    --light-emphasis-color: var(--alabaster) ;
+    --shadow-color:var(--dark-silver);
+    --footer-color:var(--dark-silver);
+}
+
+.dark-theme-high-contrast {
+    --primary-color: var(--palm-leaf) ;
+    --background-color: #0c0c0b;
+    --strong-emphasis-color: var(--marigold);
+    --light-emphasis-color: var(--pine-tree);
+    --shadow-color:var(--dark-silver);
+    --footer-color:var(--dark-silver);
+}
+
+
+.dark-theme-high-contrast {
+    --primary-color: var(--palm-leaf) ;
+    --background-color: #f2f3f2;
+    --strong-emphasis-color: var(--marigold);
+    --light-emphasis-color: var(--alabaster) ;
+    --shadow-color:var(--dark-silver);
+    --footer-color:var(--dark-silver);
 }
 
 * {
@@ -57,7 +76,7 @@
 body {
     font-size: 10pt;
     font-family: "Dosis", Helvetica, "Comic Sans MS", sans-serif;
-    color: var(--light-emphasis-color)
+    color: var(--shadow-color)
 }
 
 /*Mobile-First*/
@@ -219,11 +238,17 @@ main {
     gap: 1em;
     background-color: var(--background-color);
     border-top: var(--shadow-color) solid 1px;
+    .nombre-articulo {
+        font-size: 4em;
+        font-weight: 500;
+        color: var(--strong-emphasis-color);
+        text-align: center;
+    }
     .element{
         cursor: pointer;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: start;
         justify-content: center;
         border: 1px solid var(--shadow-color);;
         justify-content: center;
@@ -231,11 +256,7 @@ main {
         img {
             width: 100%;
         }
-        .nombre-articulo {
-            font-size: 1.5em;
-            font-weight: 500;
-            color: var(--strong-emphasis-color);
-        }
+        
         .precio{
             font-size: larger;
             color: var(--light-emphasis-color);
@@ -250,6 +271,23 @@ main {
     }
     .element:hover {
         box-shadow: -0.1em -0.1em 0.1em 0.1em var(--strong-emphasis-color), 0.1em 0.1em 0.1em 0.1em var(--strong-emphasis-color);
+    }
+    .btn-comprar {
+        background-color: var(--marigold);
+        padding: 1em;
+        display: block;
+        margin: 3em;
+        color: var(--shadow-color);
+        text-decoration: none;
+    }
+
+    .btn-comprar:hover {
+        background-color: #fc9404;
+        box-shadow: -0.1em -0.1em 0.1em 0.1em var(--light-emphasis-color), 0.1em 0.1em 0.1em 0.1em var(--light-emphasis-color);
+    }
+    .btn-comprar:active {
+        background-color: #4e3209;
+
     }
 } 
 /*Pie de página*/
@@ -281,10 +319,6 @@ footer{
     header > img {
         width: 6em;
     }
-    /* main {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-    } */
 
     footer {
         display: grid;
@@ -320,6 +354,10 @@ footer{
         main {
             grid-template-columns: repeat(4, 1fr);
             border-left: 1px solid rgb(66, 66, 66);
+        }
+        .element{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
         }
     }
     footer {
